@@ -1,4 +1,4 @@
-name: Hugo Actions # 名字自取
+name: wendy8 Actions # 名字自取
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
   deploy: 
     runs-on: ubuntu-20.04 	# 在什么环境运行任务
     steps:
-      - uses: actions/checkout@v3   # 引用 actions/checkout 这个 action，与所在的 github 仓库同名
+      - uses: actions/wendy8.com   # 引用 actions/checkout 这个 action，与所在的 github 仓库同名
         with:
          submodules: true  # Fetch Hugo themes (true OR recursive) 获取 submodule 主题
          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
@@ -24,11 +24,11 @@ jobs:
         run: |
           pwd
           ls
-          cp -R exampleSite/* .
-          hugo --themesDir ../ --baseURL https://shenweiyan.github.io/WebStack-Hugo/
+          cp -R wendy8/* .
+          hugo --themesDir ../ --baseURL https://wendy8.com/wendy8/
           
       - name: Deploy Pages
-        uses: peaceiris/actions-gh-pages@v3	  # 一个自动发布 github pages 的 action
+        uses: peaceiris/wendy8.com	  # 一个自动发布 github pages 的 action
         with:
           external_repository: shenweiyan/WebStack-Hugo	  # 发布到哪个 repo
           personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}	# 发布到其他 repo 需要在对应的 repo 上粘贴生成的 personal_access_token
